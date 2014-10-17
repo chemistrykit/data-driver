@@ -2,19 +2,39 @@
 
 == DESCRIPTION:
 
-Consume a comma-separated (CSV) or Excel (XLSX) file containing data and return a key/value collection (e.g., a Hash).
+Consume a comma-separated (CSV) or modern Excel (XLSX) file containing data and return an array containing a key/value collections of your data (e.g., a Hash).
 
 == INSTALLATION:
 
-Coming soon.
+gem install data-driver
+
+== DATA SCHEMA:
+
+=== CSV
+
+descriptor,descriptor,descriptor,etc.,etc.
+yourdata,yourdata,yourdata,etc.,etc.
+moreofyourdata,moreofyourdata,moreofyourdata,etc.,etc.
+
+=== XLSX
+
+| descriptor      | descriptor      | descriptor      | etc.  | etc.  |
+| yourdata        | yourdata        | yourdata        | etc.  | etc.  |
+| moreofyourdata  | moreofyourdata  | moreofyourdata  | etc.  | etc.  |
 
 == USAGE:
 
-Coming soon.
+=== Basic Usage
 
-=== Environment Variables
+DataDriver.consume('path-to-file')
 
-If these values are not set properly, a RuntimeError will be returned along with a helpful message.
+NOTE: Will auto-detect the file type. If there is more than one worksheet, the first one will be used by default.
+
+=== Specifying a Worksheet
+
+DataDriver.consume('path-to-file', 1)
+
+NOTE: The second parameter accepts a number, and numbering starts at 0. So 1 is the second worksheet.
 
 == LICENSE:
 
