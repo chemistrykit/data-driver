@@ -19,10 +19,10 @@ standard_user,tomsmith,SuperSecretPassword!,You logged into a secure area!
 
 === XLSX
 
-| account_type      | username      | password              | notification_message.           |
-| bad_password      | tomsmith      | badPassword           | Your password is invalid!       |
-| bad_username      | badUsername   | SuperSecretPassword!  | Your username is invalid!       |
-| standard_user     | tomsmith      | SuperSecretPassword!  | You logged into a secure area!  |
+| account_type  | username    | password             | notification_message.          |
+| bad_password  | tomsmith    | badPassword          | Your password is invalid!      |
+| bad_username  | badUsername | SuperSecretPassword! | Your username is invalid!      |
+| standard_user | tomsmith    | SuperSecretPassword! | You logged into a secure area! |
 
 === Collection Returned
 
