@@ -2,7 +2,7 @@
 
 == DESCRIPTION:
 
-Consume a comma-separated (CSV) or modern Excel (XLSX) file containing data and return an array containing a key/value collections of your data (e.g., a Hash).
+Consume a comma-separated (CSV) or modern Excel (XLSX) file containing data and return an array containing key/value collections of your data (e.g., Hashes).
 
 == INSTALLATION:
 
@@ -12,15 +12,32 @@ gem install data-driver
 
 === CSV
 
-descriptor,descriptor,descriptor,etc.,etc.
-yourdata,yourdata,yourdata,etc.,etc.
-moreofyourdata,moreofyourdata,moreofyourdata,etc.,etc.
+account_type,username,password,notification_message
+bad_password,tomsmith,badPassword,Your password is invalid!
+bad_username,badUsername,SuperSecretPassword!,Your username is invalid!
+standard_user,tomsmith,SuperSecretPassword!,You logged into a secure area!
 
 === XLSX
 
-| descriptor      | descriptor      | descriptor      | etc.  | etc.  |
-| yourdata        | yourdata        | yourdata        | etc.  | etc.  |
-| moreofyourdata  | moreofyourdata  | moreofyourdata  | etc.  | etc.  |
+| account_type      | username      | password              | notification_message.           |
+| bad_password      | tomsmith      | badPassword           | Your password is invalid!       |
+| bad_username      | badUsername   | SuperSecretPassword!  | Your username is invalid!       |
+| standard_user     | tomsmith      | SuperSecretPassword!  | You logged into a secure area!  |
+
+=== Collection Returned
+
+[ { :account_type=>"bad_password",
+    :username=>"tomsmith",
+    :password=>"badPassword",
+    :notification_message=>"Your password is invalid!"},
+  { :account_type=>"bad_username",
+    :username=>"badUsername",
+    :password=>"SuperSecretPassword!",
+    :notification_message=>"Your username is invalid!"},
+  { :account_type=>"standard_user",
+    :username=>"tomsmith",
+    :password=>"SuperSecretPassword!",
+    :notification_message=>"You logged into a secure area!"} ]
 
 == USAGE:
 
